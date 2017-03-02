@@ -1,33 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <title>Stop: It's Giphy time</title>
-</head>
-
-<body>
-  
-<div id='buttons'>
-  
-<form id="movie-form">
-      <label for="animals-input">Add an animal!</label>
-      <input type="text" id="animal-input"><br>
-
-      <!-- Button triggers new movie to be added -->
-      <input id="add-animal" type="submit" value="Search">
-    </form>
-
-
-
-</div>
-   
-
-  <div class="animal-view"> </div>
-  <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
-
-  <script type="text/javascript">
-  
 
 $(document).ready(function () {
   event.preventDefault();
@@ -110,15 +80,15 @@ for (var i = 0; i < 10; i++) {
           var src = still;
 
         var image = $("<img src =" + src +">");
-        image.attr('data-animate',animate);
-        image.attr('data-still', still);
+        image.attr('animate',animate);
+        image.attr('still', still);
         image.attr('data-state', 'still');
 
         image.addClass('gif');
 
 
-        console.log(image.attr('data-animate'));
-        console.log(image.attr('data-still'));
+        console.log(image.attr('animate'));
+        console.log(image.attr('still'));
           console.log(image.attr('data-state'));
        
         // console.log(image.attr());
@@ -132,15 +102,16 @@ for (var i = 0; i < 10; i++) {
 $(".gif").on("click", function () {
    var state = $(this).attr("data-state");
 
-         if (state==='still') {
-          $(this).attr("src", $(this).attr('data-animate'));
-          $(this).attr("data-state", "animate");
-        }
+          if (state === 'still') {
 
-        else {
-          $(this).attr("src", $(this).attr("data-still"));
-          $(this).attr("data-state", "still");
-        }
+            $(this).attr("src", $(this).attr('animate'));
+          
+          }
+          
+          else  {
+          $(this).attr("src", still);
+          $(this).attr("data-state", 'still');
+}
 
 }); // end on click function for gifs. 
 
@@ -168,9 +139,3 @@ $(".gif").on("click", function () {
 
      
  // end of click function   
-
-      
-  </script>
-</body>
-
-</html>
