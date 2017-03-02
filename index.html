@@ -53,8 +53,10 @@ var button = $("<button>");
      button.text(animalarray[i]);
      button.addClass('buttons');
     button.attr('value',animalarray[i]);
+     
      console.log(button.attr('value'));
      console.log(button.hasClass('buttons'));
+     console.log(animalarray);
     // console.log(button.attr());
     $("#buttons").append(button);
    
@@ -63,7 +65,7 @@ var button = $("<button>");
 
 
 
-
+// takes input field and makes button. 
 $('#add-animal').on("click", function(event) {
 // prevents form form submitting itself. forms allow users to press enter to submit.  
 event.preventDefault();
@@ -74,7 +76,7 @@ var input = $("#animal-input").val().trim();
 animalarray.push(input);
 console.log(animalarray);
 // renders button
-renderButtons();
+renderButtons()
 });
 
 renderButtons();
